@@ -179,7 +179,7 @@ class _LocationScreenState extends State<LocationScreen> {
                                     : i == 8
                                         ? const Text('Tomorrow', style: kFont15)
                                         : Text(
-                                            DateFormat('d MMM, EEE').format(DateTime.fromMillisecondsSinceEpoch(forecastData['list'][i]['dt'])),
+                                            DateFormat('d MMM, EEE').format(DateTime.parse(forecastData['list'][i]['dt_txt'])),
                                             style: kFont15),
                               ),
                               Expanded(
