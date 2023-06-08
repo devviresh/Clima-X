@@ -13,7 +13,7 @@ class ClimaX extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(),
-      home: LoadingScreen(),
+      home: const LoadingScreen(),
     );
   }
 }

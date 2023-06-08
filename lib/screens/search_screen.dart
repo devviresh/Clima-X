@@ -15,7 +15,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ClimaX'),
+        title: const Text('ClimaX'),
       ),
       body: Column(
         children: [
@@ -23,7 +23,7 @@ class _SearchScreenState extends State<SearchScreen> {
             padding: const EdgeInsets.all(15.0),
             child: TextField(
               autofocus: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 isDense: true,
                 filled: true,
                 icon: Icon(Icons.location_city,color: Colors.white,),
@@ -33,7 +33,6 @@ class _SearchScreenState extends State<SearchScreen> {
                 )
               ),
               onChanged: (value){
-                print('value = $value');
               },
               onSubmitted: (value){
                 cityName = value;

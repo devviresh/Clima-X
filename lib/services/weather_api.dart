@@ -1,6 +1,5 @@
 import 'package:clima_x/services/location.dart';
 import 'package:clima_x/services/networking.dart';
-import 'package:flutter/material.dart';
 
 import '../apikey.dart';
 
