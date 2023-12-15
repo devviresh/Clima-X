@@ -75,9 +75,12 @@ class _LocationScreenState extends State<LocationScreen> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            backgroundColor: Colors.black12,
+            backgroundColor: Colors.black26,
             elevation: 1.0,
-            leading: const Icon(Icons.adb),
+            leading: const Icon(
+              Icons.adb,
+              color: Colors.white,
+            ),
             title: const Text('ClimaX'),
             actions: [
               IconButton(
@@ -87,12 +90,20 @@ class _LocationScreenState extends State<LocationScreen> {
                     var forecast = await WeatherModel().getLocationForecast();
                     updateForecast(forecast);
                   },
-                  icon: const Icon(Icons.home)),
+                  icon: const Icon(
+                    Icons.home,
+                    color: Colors.white,
+                  )),
               IconButton(
-                icon: const Icon(Icons.search),
+                icon: const Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ),
                 onPressed: () async {
-                  var cityName = await Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const SearchScreen()));
+                  var cityName = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SearchScreen()));
                   var weatherData =
                       await WeatherModel().getCityWeather(cityName);
                   updateWeather(weatherData);
@@ -116,7 +127,8 @@ class _LocationScreenState extends State<LocationScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text('°C', style: TextStyle(fontSize: 22.0)),
-                        Text(description, style: const TextStyle(fontSize: 22.0))
+                        Text(description,
+                            style: const TextStyle(fontSize: 22.0))
                       ],
                     )
                   ],
@@ -179,7 +191,10 @@ class _LocationScreenState extends State<LocationScreen> {
                                     : i == 8
                                         ? const Text('Tomorrow', style: kFont15)
                                         : Text(
-                                            DateFormat('d MMM, EEE').format(DateTime.parse(forecastData['list'][i]['dt_txt'])),
+                                            DateFormat('d MMM, EEE').format(
+                                                DateTime.parse(
+                                                    forecastData['list'][i]
+                                                        ['dt_txt'])),
                                             style: kFont15),
                               ),
                               Expanded(
@@ -215,15 +230,11 @@ class _LocationScreenState extends State<LocationScreen> {
                       height: 70.0,
                       child: Column(
                         children: [
-                          const Text(
-                            'Feels like',
-                            style: TextStyle(
-                                fontSize: 16.0, color: Colors.white60)
-                          ),
-                          Text(
-                            '$feelsLike °c',
-                            style: const TextStyle(fontSize: 20.0)
-                          )
+                          const Text('Feels like',
+                              style: TextStyle(
+                                  fontSize: 16.0, color: Colors.white60)),
+                          Text('$feelsLike °c',
+                              style: const TextStyle(fontSize: 20.0))
                         ],
                       ),
                     ),
@@ -232,15 +243,11 @@ class _LocationScreenState extends State<LocationScreen> {
                       height: 70.0,
                       child: Column(
                         children: [
-                          const Text(
-                            'Humidity',
-                            style: TextStyle(
-                                fontSize: 16.0, color: Colors.white60)
-                          ),
-                          Text(
-                            '$humidity %',
-                            style: const TextStyle(fontSize: 20.0)
-                          )
+                          const Text('Humidity',
+                              style: TextStyle(
+                                  fontSize: 16.0, color: Colors.white60)),
+                          Text('$humidity %',
+                              style: const TextStyle(fontSize: 20.0))
                         ],
                       ),
                     ),
@@ -253,15 +260,11 @@ class _LocationScreenState extends State<LocationScreen> {
                       width: 150.0,
                       child: Column(
                         children: [
-                          const Text(
-                            'Wind Speed',
-                            style: TextStyle(
-                                fontSize: 16.0, color: Colors.white60)
-                          ),
-                          Text(
-                            '$windSpeed km/h',
-                            style: const TextStyle(fontSize: 20.0)
-                          )
+                          const Text('Wind Speed',
+                              style: TextStyle(
+                                  fontSize: 16.0, color: Colors.white60)),
+                          Text('$windSpeed km/h',
+                              style: const TextStyle(fontSize: 20.0))
                         ],
                       ),
                     ),
